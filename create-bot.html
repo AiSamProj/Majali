@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7F7F7;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="button"] {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #F1F1F1;
+            color: #333;
+            font-size: 16px;
+            width: 100%;
+        }
+        input[type="button"] {
+            background-color: #008CBA;
+            color: #FFF;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #006D8B;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Bot</h1>
+    <form action="account.html">
+        <label for="bot-name">Bot Name:</label>
+        <input type="text" id="bot-name" name="bot-name">
+        <label for="documents">Documents:</label>
+        <input type="file" id="documents" name="documents" multiple>
+        <input type="button" value="Upload" onclick="showMedicalBotBtn()">
+    </form>
+
+    <script>
+        function showMedicalBotBtn() {
+            var chatbotWindow = window.open("chatbot.html");
+            chatbotWindow.onload = function() {
+                chatbotWindow.showMedicalBotBtn();
+            }
+            window.location.href = "account.html";
+        }
+    </script>
+</body>
+</html>
